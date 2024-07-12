@@ -31,20 +31,35 @@ public class DogServlet extends HttpServlet {
         String pathInfo = req.getPathInfo();
         switch (pathInfo) {
             case "/list":
-                req.setAttribute("dogs", dogs);
-                req.getRequestDispatcher("/WEB-INF/list.jsp").forward(req, resp);
+                 showAll(req,resp);
                 break;
             case "/add":
-                req.getRequestDispatcher("/WEB-INF/form.jsp").forward(req, resp);
+                showForm(req,resp);
                 break;
             case "/detail":
-                req.getRequestDispatcher("/WEB-INF/detail.jsp").forward(req, resp);
+                showDetail(req,resp);
                 break;
         }
-
-
         req.getRequestDispatcher("/WEB-INF/detail.jsp").forward(req, resp);
     }
+
+
+    //Creation des methodes
+    protected void showAll(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("dogs", dogs);
+        req.getRequestDispatcher("/WEB-INF/list.jsp").forward(req, resp);
+    }
+    protected void showForm(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("dogs", dogs);
+        req.getRequestDispatcher("/WEB-INF/form.jsp").forward(req, resp);
+    }
+    protected void showDetail(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        String idFourni = req.getParameter("id");
+        req.setAttribute("idFourni", idFourni);
+        req.getRequestDispatcher("/WEB-INF/detail.jsp").forward(req, resp);
+    }
+
 
 
     @Override
@@ -53,7 +68,6 @@ public class DogServlet extends HttpServlet {
         String name = req.getParameter("name");
         String breed = req.getParameter("breed");
         LocalDate dateOfBirth = LocalDate.parse(req.getParameter("dateOfBirth"));
-
         // creation du chien
         Dog dog = new Dog(name, breed, dateOfBirth);
         dogs.add(dog);

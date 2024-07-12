@@ -3,13 +3,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
+   <%@ include file="bootstapImports.html"%>
+
     <title>Chiens</title>
 </head>
 <body>
@@ -41,6 +37,9 @@
             </td>
             <td><%= d.getDateOfBirth().getDayOfMonth() + "/" + d.getDateOfBirth().getMonthValue() + "/" + d.getDateOfBirth().getYear() %>
             </td>
+            <td>
+                <a href="detail?id=<%=d.getId()%>" class="btn btn-success text-end"><i class="bi bi-eye"></i> Detail </a> >
+            </td>
         </tr>
         <% } %>
         </tbody>
@@ -53,7 +52,7 @@
 </main>
 
 <%--    <a class="btn btn-light" href="form.jsp"><i class="bi bi-plus-circle-fill"></i>Add a Dog</a>--%>
-    <a href="${pageContext.request.contextPath}/dog/form" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Add a Dog</a>
+    <a href="${pageContext.request.contextPath}/dog/add" class="btn btn-secondary col-3 offset-8 d-grid gap-2 d-md-flex justify-content-md-end"><i class="bi bi-plus-circle"></i> Add a Dog</a>
 
 
 </div>

@@ -4,11 +4,9 @@
         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <mapping class="org.example.exercice_dog.HelloServlet"/>
+
         <mapping class="org.example.exercice_dog.model.Dog"/>
-        <mapping class="org.example.exercice_dog.dao.DogDAO"/>
-        <mapping class="org.example.exercice_dog.controller.DogServlet"/>
-        <mapping class="org.example.exercice_dog.util.SessionfactorySingleton"/>
+
 
     </session-factory>
 </hibernate-configuration>

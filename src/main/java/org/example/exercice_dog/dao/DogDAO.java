@@ -24,12 +24,10 @@ public class DogDAO {
             session.save(dog);
             transaction.commit();
         } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
+//            if (transaction != null) {
+//                transaction.rollback();
             }
-        } finally {
-            session.close();
-        }
+
     }
 
     public List<Dog> allDogs() {

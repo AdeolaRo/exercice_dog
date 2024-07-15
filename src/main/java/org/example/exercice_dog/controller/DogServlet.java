@@ -26,8 +26,6 @@ public class DogServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        List<Dog> dogs = new ArrayList<>();
-
         String pathInfo = req.getPathInfo();
         switch (pathInfo) {
             case "/list":
@@ -71,7 +69,6 @@ public class DogServlet extends HttpServlet {
         // creation du chien
         Dog dog = new Dog(name, breed, dateOfBirth);
         dogs.add(dog);
-
         doGet(req, resp);
     }
 }

@@ -25,7 +25,9 @@ public class Dog {
     private String breed;
     private LocalDate dateOfBirth;
 
-
     public Dog(String name, String breed, LocalDate dateOfBirth) {
+        this.name = name;
+        this.breed = breed;
+        this.dateOfBirth = dateOfBirth;
     }
 }

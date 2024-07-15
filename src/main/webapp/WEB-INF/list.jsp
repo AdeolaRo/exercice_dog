@@ -35,7 +35,7 @@
             </td>
             <td><%= d.getBreed() %>
             </td>
-            <td><%= d.getDateOfBirth().getDayOfMonth() + "/" + d.getDateOfBirth().getMonthValue() + "/" + d.getDateOfBirth().getYear() %>
+            <td><%= d.getDateOfBirth() %>
             </td>
             <td>
                 <a href="detail?id=<%=d.getId()%>" class="btn btn-success text-end"><i class="bi bi-eye"></i> Detail </a> >

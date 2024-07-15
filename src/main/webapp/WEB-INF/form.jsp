@@ -18,7 +18,7 @@
 <div class="container">
     <h2>- Add Dog -</h2>
      <div class="col-8 offset-2 text-bg-dark p-3">
-        <form action="${pageContext.request.contextPath}/form" method="post">
+        <form action="${pageContext.request.contextPath}/dog/list" method="post">
 
             <div class="mb-3">
                 <label for="id">Id :</label>
